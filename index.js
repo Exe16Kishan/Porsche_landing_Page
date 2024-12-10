@@ -1,12 +1,8 @@
-// index.js
 
-// Import the styles object from style.js
 import { styles } from "./style.js";
 
-// Helper function to apply styles from an object
-function applyStyles(element, styles) {
-  Object.assign(element.style, styles);
-}
+
+
 
 // Create the main container
 const mainContainer = document.createElement("div");
