@@ -1,14 +1,13 @@
 export const styles = {
   body: {
-    backgroundImage: 'url("./image/background.png")',
-    backgroundSize: "cover", 
-    backgroundRepeat: "no-repeat", 
-    backgroundAttachment: "fixed", 
+    background: "linear-gradient(to bottom,rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url('./image/background.png')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
     fontFamily: "'Arial', sans-serif",
-    color: "white", 
+    color: "white",
     margin: "0",
     padding: "0",
-    
   },
   navbar: {
     display: "flex",
@@ -17,12 +16,11 @@ export const styles = {
     gap: "20px",
     margin: "30px 60px", 
     padding: "0px 20px", 
-    color :"rgba(255, 255, 255, 0.8)",
-    // backgroundColor: "rgba(255, 255, 255, 0.2)",  // white background
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    color: "white", 
+    // backgroundColor: "rgba(255, 255, 255,0.1)",  // white background
+    backgroundColor: "rgba(0, 0, 0, 0.2)",
     borderRadius: "10px" ,
-    boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.5)",
-    textShadow: "0px 0px 15px rgba(255, 255, 255, 0.8)"
+    boxShadow: "0px 16px 40px rgba(0, 0, 0, 0.5)",
 
   },
   symbol: {
@@ -40,10 +38,10 @@ export const styles = {
     // color :"red"
   },
   onMouseHover: {
-    color: "black", 
+    color: "white", 
   },
   ofMouseHover: {
-    color: "white", 
+    color: "rgba(255, 255, 255, 0.6)", 
     cursor: "pointer", // Pointer cursor on hover
     transition: "0.3s ease"
   },
