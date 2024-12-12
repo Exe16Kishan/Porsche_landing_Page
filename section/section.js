@@ -136,13 +136,12 @@ export function createSection() {
 
   // Function to apply media query styles
   function applyMediaQueryStyles(e) {
-    
     const lines = document.getElementsByTagName("hr") // select all lines
     const letters = document.querySelectorAll('[name="letter"]') // select all letters
     const tags = document.querySelectorAll('[name="tags"]') // select all tags
     console.log(lines)
     console.log(tags)
-      if (e.matches) {
+    if (e.matches) {
         //lines
         for (const line of lines) {
           line.style.display = "none"; // hide when triggered screen
@@ -156,7 +155,7 @@ export function createSection() {
           tag.style.display="none"   // hide when triggered screen
         }
 
-        
+
         css(image,styles.watch2)
         css(left,styles.left2)
         css(right,styles.right2)

@@ -82,7 +82,7 @@ export const styles = {
     left: "48%",
     transform: "translate(-50%, -50%)",
     zIndex: 30,
-    width: "40%",
+    width: "45%",
     height: "50%",
     filter: "drop-shadow(15px 70px 40px rgba(0, 0, 0, 4))",
   },
@@ -118,7 +118,6 @@ export const styles = {
     background: "black",
     height: "2px",
     border: "none",
-    display: "",
   },
   bottomLeftLine: {
     position: "absolute",
@@ -129,7 +128,6 @@ export const styles = {
     background: "black",
     height: "2px",
     border: "none",
-    display: "",
   },
   topRightLine: {
     position: "absolute",
@@ -140,7 +138,6 @@ export const styles = {
     background: "white",
     height: "2px",
     border: "none",
-    display: "",
   },
   bottomRightLine: {
     position: "absolute",
@@ -151,7 +148,6 @@ export const styles = {
     background: "white",
     height: "2px",
     border: "none",
-    display: "",
   },
   exploreButton: {
     position: "absolute",
@@ -171,27 +167,23 @@ export const styles = {
     left: "19%",
     color: "black",
     zIndex: 5,
-    display: "",
   },
   leftBottom: {
     position: "absolute",
     bottom: "16%",
     left: "19%",
     color: "black",
-    display: "",
   },
   rightTop: {
     position: "absolute",
     top: "16%",
     right: "17%",
     color: "white",
-    display: "",
   },
   rightBottom: {
     position: "absolute",
     bottom: "16%",
     right: "17%",
     color: "white",
-    display: "",
   },  
 };
