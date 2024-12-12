@@ -13,6 +13,14 @@ export const styles = {
     fontSize: "26px",
     fontWeight: "bold",
   },
+  title2:{
+    color:"black",
+    position: "absolute",
+    top: "2%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    zIndex :"20"
+  },
   link: {
     margin: "5px 0",
     fontSize: "18px",
@@ -38,6 +46,9 @@ export const styles = {
     gap:"5px",
     fontWeight:"bold"
   },
+  contentButton2:{
+    display:"none"
+  },
   bigLine:{
     width: "2px",
   height: "25px",
@@ -56,6 +67,17 @@ export const styles = {
     position:"absolute",
     bottom:"8%",
     left:"38px",
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    border:"2px solid black",
+    width:"180px",
+  },
+  bottomButton2:{
+    position:"absolute",
+    bottom:"0px",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     display:"flex",
     justifyContent:"center",
     alignItems:"center",

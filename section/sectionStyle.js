@@ -20,6 +20,19 @@ export const styles = {
     boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.2)",
     transition: "box-shadow 0.3s ease, background-color 0.3s ease",
   },
+  left2: {
+    backgroundColor: "#d9dbde",
+    flex: 1,
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "10px",
+    color: "white",
+    boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.2)",
+    transition: "box-shadow 0.3s ease, background-color 0.3s ease",
+  },
+  
   right: {
     backgroundColor: "#242738",
     flex: 1,
@@ -29,8 +42,16 @@ export const styles = {
     alignItems: "center",
     gap: "100px",
     color: "white",
-    boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.2)",
-    transition: "box-shadow 0.3s ease, background-color 0.3s ease", // No transform here
+  },
+  right2: {
+    backgroundColor: "#242738",
+    flex: 1,
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "10px",
+    color: "white",
   },
   s: {
     position: "absolute",
@@ -55,6 +76,16 @@ export const styles = {
     height: "55%",
     filter: "drop-shadow(15px 70px 40px rgba(0, 0, 0, 4))",
   },
+  watch2: {
+    position: "absolute",
+    top: "50%",
+    left: "48%",
+    transform: "translate(-50%, -50%)",
+    zIndex: 30,
+    width: "40%",
+    height: "50%",
+    filter: "drop-shadow(15px 70px 40px rgba(0, 0, 0, 4))",
+  },
   letter: {
     fontSize: "80px",
     fontWeight: "900",
@@ -64,13 +95,15 @@ export const styles = {
     transition: "all 0.3s ease",
   },
   letter2: {
-    fontSize: "40px",
-    fontWeight: "bold",
+    
+    fontSize: "40px", // Optionally reduce the font size
+    fontWeight: "900",
     textAlign: "center",
     zIndex: 15,
     textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)",
     transition: "all 0.3s ease",
   },
+  
   letterHover: {
     color: "#5b5a5e",
     textShadow: "5px 5px 15px #e8a166",

@@ -23,7 +23,6 @@ export function createSection() {
   // Adding watch image
   const image = document.createElement("img");
   image.setAttribute("src", "./image/watch.png");
-  css(image, styles.watch);
   section.appendChild(image);
 
   // Adding Explore button
@@ -94,6 +93,7 @@ export function createSection() {
   function addText(parent, parentTextArray) {
     parentTextArray.forEach((text, index) => {
       const h1 = document.createElement("h1");
+      h1.setAttribute("name","tags")
       h1.textContent = text;
       parent.appendChild(h1);
 
@@ -139,6 +139,7 @@ export function createSection() {
     // Apply styles based on media query match
     const lines = document.getElementsByTagName("hr")
     const letters = document.querySelectorAll('[name="letter"]')
+    const tags = document.querySelectorAll('[name="tags"]')
     console.log(letters)
       if (e.matches) {
         //lines
@@ -149,6 +150,13 @@ export function createSection() {
         for (const letter of letters) {
           css(letter,styles.letter2)
         }
+        // tags
+        for (const tag of tags) {
+          tag.style.display="none"
+        }
+        css(image,styles.watch2)
+        css(left,styles.left2)
+        css(right,styles.right2)
         // letter s
         css(S, styles.s2); 
       } else {
@@ -159,9 +167,18 @@ export function createSection() {
         // letters
         for (const letter of letters) {
           css(letter,styles.letter)
+
+        }
+        // tags
+        for (const tag of tags) {
+          tag.style.display="block"
         }
         // letter s
-      css(S, styles.s);
+        css(left,styles.left)
+        css(right,styles.right)
+        css(image, styles.watch);
+
+        css(S, styles.s);
     }
   }
 
