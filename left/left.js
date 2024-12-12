@@ -4,50 +4,61 @@ import { styles } from "./leftStyles.js";
 export function leftComponent() {
   const mainContainer = document.createElement("div");
   const linkList = ["Store", "Shop", "Collection"];
-  const nav = document.createElement("div"); // Parent div for navigation
-  const title = document.createElement("div"); // Child div for the title
+
+  // Navigation container
+  const nav = document.createElement("div");
+  css(nav, styles.nav);
+
+  // Title setup
+  const title = document.createElement("div");
   title.setAttribute("name", "Title");
   title.textContent = "Diesel";
+  css(title, styles.title);
+  nav.appendChild(title);
 
-  const title2 = document.createElement("h1"); // Alternate title for small screens
+  const title2 = document.createElement("h1");
   title2.textContent = "Diesel";
   css(title2, styles.title2);
   mainContainer.appendChild(title2);
 
-  const Link = document.createElement("div"); // Child div for links
+  // Links container
+  const Link = document.createElement("div");
   Link.setAttribute("name", "Link");
-  nav.appendChild(title); // Add title to the nav
-
-  // Apply styles
-  css(nav, styles.nav);
-  css(title, styles.title);
   css(Link, styles.Link);
 
-  // Add links to the navigation
+  // Adding links to the Link div
   linkList.forEach((text) => {
     const h1 = document.createElement("h1");
     h1.textContent = text;
     css(h1, styles.link);
+
+    // Adding hover effect
+    h1.addEventListener("mouseenter", () => css(h1, styles.linkHover));
+    h1.addEventListener("mouseleave", () => css(h1, styles.link));
+
     Link.appendChild(h1);
   });
 
-  // Content button
+  nav.appendChild(Link); // Append Link to nav
+
+  // Content button setup
   const content = document.createElement("div");
   const bigLine = document.createElement("hr");
   const smallLine = document.createElement("hr");
+  const textNode = document.createTextNode("Content");
 
   content.appendChild(bigLine);
   content.appendChild(smallLine);
-  const textNode = document.createTextNode("Content");
   content.appendChild(textNode);
 
   css(bigLine, styles.bigLine);
   css(smallLine, styles.smallLine);
 
-  // Bottom buttons
+  // Bottom buttons setup
   const bottomButton = document.createElement("div");
   const leftButton = document.createElement("div");
   const rightButton = document.createElement("div");
+
   const leftImg = document.createElement("img");
   const rightImg = document.createElement("img");
 
@@ -65,18 +76,21 @@ export function leftComponent() {
   css(leftImg, styles.leftImg);
   css(rightImg, styles.rightImg);
 
+  // Ring setup
   const ring = document.createElement("div");
   const innerRing = document.createElement("div");
+
   ring.appendChild(innerRing);
   css(ring, styles.ring);
   css(innerRing, styles.innerRing);
 
-  nav.appendChild(Link); // Append Link to nav
+  // Append elements to main container
   mainContainer.appendChild(ring);
   mainContainer.appendChild(content);
   mainContainer.appendChild(bottomButton);
   mainContainer.appendChild(nav);
 
+  // Responsive design function
   function applyResponsiveStyles() {
     if (window.innerWidth <= 768) {
       css(content, styles.contentButton2);
@@ -91,9 +105,14 @@ export function leftComponent() {
     }
   }
 
-  window.addEventListener("resize", applyResponsiveStyles);
-  applyResponsiveStyles();
+  // Adding a debounced resize event listener
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(applyResponsiveStyles, 100);
+  });
 
+  applyResponsiveStyles();
 
   return mainContainer;
 }

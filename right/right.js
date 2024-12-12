@@ -3,28 +3,40 @@ import { styles } from "../right/rightStyles.js";
 
 export function rightComponent() {
   const mainContainer = document.createElement("div");
+
   const navList = ["Cart", "Login", "Profile"];
   const nav = document.createElement("div"); // Parent div for navigation
-  const Link = document.createElement("div"); // Child div for links
-  css(Link, styles.Link);
+  const linkContainer = document.createElement("div"); // Child div for links
+  css(linkContainer, styles.Link);
 
-  // Add links to the Link div
+  
   navList.forEach((text) => {
     const h1 = document.createElement("h1");
     h1.textContent = text;
     css(h1, styles.link);
-    Link.appendChild(h1);
+
+    // Add hover effects for links
+    h1.addEventListener("mouseover", () => {
+      css(h1, styles.linkHover);
+    });
+    h1.addEventListener("mouseout", () => {
+      css(h1, styles.link);
+    });
+
+    linkContainer.appendChild(h1);
   });
 
-  // Add Link div to nav
-  nav.appendChild(Link);
+  // Adding linkContainer div to nav
+  nav.appendChild(linkContainer);
 
   const printButton = document.createElement("div");
   printButton.textContent = "P R I N T";
+
+
   mainContainer.appendChild(printButton);
   mainContainer.appendChild(nav);
 
-  // Responsive design using window.innerWidth
+  // Responsive design 
   function applyResponsiveStyles() {
     if (window.innerWidth <= 768) {
       css(nav, styles.nav2);
@@ -35,8 +47,15 @@ export function rightComponent() {
     }
   }
 
-  
-  window.addEventListener("resize", applyResponsiveStyles);
+  const debouncedResize = (() => {
+    let timeout;
+    return () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(applyResponsiveStyles, 200);
+    };
+  })();
+
+  window.addEventListener("resize", debouncedResize);
   applyResponsiveStyles();
 
   return mainContainer;
