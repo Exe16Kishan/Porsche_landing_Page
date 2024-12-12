@@ -7,7 +7,6 @@ export function rightComponent() {
   const nav = document.createElement("div"); // Parent div for navigation
   const Link = document.createElement("div"); // Child div for links
 
-  // Apply CSS to nav and Link
   css(nav, styles.nav);
   css(Link, styles.Link);
 
@@ -18,16 +17,40 @@ export function rightComponent() {
     css(h1, styles.link);
     Link.appendChild(h1);
   });
+
   // Add Link div to nav
   nav.appendChild(Link);
 
-  // content button
-  const printButton= document.createElement("div");
-  printButton.textContent="P R I N T"
-  css(printButton,styles.printButton)
-  // Append to mainContainer
+  const printButton = document.createElement("div");
+  printButton.textContent = "P R I N T";
   mainContainer.appendChild(printButton);
   mainContainer.appendChild(nav);
+
+  css(printButton, styles.printButton);
+
+  // create a media query
+  const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+  // function to apply media query styles
+  function applyMediaQueryStyles(e) {
+    if (e.matches) {
+      styles.printButton.display = "none";  // hide the button
+      styles.nav.display = "none";          // hide the nav
+    } else {
+      styles.printButton.display = "flex";  // show the print button
+      styles.nav.display = "";              // reset 
+    }
+
+    // re-apply updated styles in element
+    css(nav, styles.nav);
+    css(printButton, styles.printButton);
+  }
+
+  // Add event listener to handle media query change
+  mediaQuery.addEventListener("change", applyMediaQueryStyles);
+
+  // call the function 
+  applyMediaQueryStyles(mediaQuery);
 
   return mainContainer;
 }

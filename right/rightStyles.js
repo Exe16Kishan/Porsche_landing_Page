@@ -4,6 +4,7 @@ export const styles = {
       top: "5px",
       right: "15%",       
       padding: "20px",
+      display:""
 
   },
   link: {
@@ -27,8 +28,8 @@ export const styles = {
     width:"150px",
     height:"50px",
     border:"2px solid white",
-    display: "flex", // Use flexbox for centering
-    justifyContent: "center", // Center horizontally
+    display: "flex", 
+    justifyContent: "center", 
     alignItems: "center"
   }
 };
