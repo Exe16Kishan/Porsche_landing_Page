@@ -93,7 +93,7 @@ export function leftComponent() {
 
   window.addEventListener("resize", applyResponsiveStyles);
 
-  applyResponsiveStyles();
+  // applyResponsiveStyles();
 
   return mainContainer;
 }

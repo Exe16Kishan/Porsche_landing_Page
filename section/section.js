@@ -43,10 +43,9 @@ export function createSection() {
 
   // Function to create, style, and add hover effects to specific letters
   function addLetters(parent, letters) {
-    
     letters.forEach((letter) => {
       const letterElement = document.createElement("h1");
-      letterElement.setAttribute("name","letter")
+      letterElement.setAttribute("name", "letter");
       letterElement.textContent = letter;
       css(letterElement, styles.letter);
 
@@ -65,7 +64,6 @@ export function createSection() {
       });
 
       parent.appendChild(letterElement);
-      
     });
   }
 
@@ -93,7 +91,7 @@ export function createSection() {
   function addText(parent, parentTextArray) {
     parentTextArray.forEach((text, index) => {
       const h1 = document.createElement("h1");
-      h1.setAttribute("name","tags")
+      h1.setAttribute("name", "tags");
       h1.textContent = text;
       parent.appendChild(h1);
 
@@ -119,8 +117,8 @@ export function createSection() {
   createLine(left);
   createLine(right);
 
-   addLetters(left, leftLetters);  
-   addLetters(right, rightLetters);  
+  addLetters(left, leftLetters);
+  addLetters(right, rightLetters);
 
   section.appendChild(left);
   section.appendChild(right);
@@ -131,67 +129,46 @@ export function createSection() {
   const rightSide = rightComponent();
   right.appendChild(rightSide);
 
-function applyMediaQueryStyles() {
-  const isSmallScreen = window.innerWidth <= 768; 
-
-  const lines = document.getElementsByTagName("hr"); // Select all lines
+  const lines = document.querySelectorAll("hr"); // Select all lines
   const letters = document.querySelectorAll('[name="letter"]'); // Select all letters
   const tags = document.querySelectorAll('[name="tags"]'); // Select all tags
 
-  console.log(lines);
-  console.log(tags);
+  function applyMediaQueryStyles() {
+    const isSmallScreen = window.innerWidth <= 768;
+    if (isSmallScreen) {
+      // lines
+      for (const line of lines) line.style.display = "none"; // Hide when screen is small
 
-  if (isSmallScreen) {
-    // lines
-    for (const line of lines) {
-      line.style.display = "none"; // Hide when screen is small
+      // letters
+      for (const letter of letters) css(letter, styles.letter2);
+
+      // tags
+      for (const tag of tags) tag.style.display = "none"; // Hide when screen is small
+
+      css(image, styles.watch2);
+      css(left, styles.left2);
+      css(right, styles.right2);
+      css(S, styles.s2);
+    } else {
+      // lines
+      for (const line of lines) line.style.display = "block";
+
+      // letters
+      for (const letter of letters) css(letter, styles.letter);
+
+      // tags
+      for (const tag of tags) tag.style.display = "block";
+
+      css(left, styles.left);
+      css(right, styles.right);
+      css(image, styles.watch);
+      css(S, styles.s);
     }
-
-    // letters
-    for (const letter of letters) {
-      css(letter, styles.letter2);
-    }
-
-    // tags
-    for (const tag of tags) {
-      tag.style.display = "none"; // Hide when screen is small
-    }
-
-    css(image, styles.watch2);
-    css(left, styles.left2);
-    css(right, styles.right2);
-    // letter S
-    css(S, styles.s2);
-  } else {
-    // lines
-    for (const line of lines) {
-      line.style.display = "block";
-    }
-
-    // letters
-    for (const letter of letters) {
-      css(letter, styles.letter);
-    }
-
-    // tags
-    for (const tag of tags) {
-      tag.style.display = "block";
-    }
-
-    css(left, styles.left);
-    css(right, styles.right);
-    css(image, styles.watch);
-    // letter S
-    css(S, styles.s);
   }
-}
 
-// Event listener for window resize
-window.addEventListener("resize", applyMediaQueryStyles);
+  window.addEventListener("resize", applyMediaQueryStyles);
 
-// Initial call to apply styles based on the current screen size
-applyMediaQueryStyles();
-
+  // applyMediaQueryStyles();
 
   return section;
 }
