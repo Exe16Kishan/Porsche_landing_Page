@@ -36,8 +36,8 @@ export function rightComponent() {
   }
 
   
+  applyResponsiveStyles();
   window.addEventListener("resize", applyResponsiveStyles);
-  // applyResponsiveStyles();
 
   return mainContainer;
 }

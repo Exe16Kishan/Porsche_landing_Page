@@ -91,9 +91,9 @@ export function leftComponent() {
     }
   }
 
+  applyResponsiveStyles();
   window.addEventListener("resize", applyResponsiveStyles);
 
-  // applyResponsiveStyles();
 
   return mainContainer;
 }
