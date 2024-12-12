@@ -5,7 +5,6 @@ export const styles = {
     alignItems: "center",
     height: "100vh",
     position: "relative",
-    background: "linear-gradient(to right, #d9dbde, #242738)",
     overflow: "hidden",
   },
   left: {
@@ -16,9 +15,8 @@ export const styles = {
     justifyContent: "center",
     alignItems: "center",
     gap: "100px",
-    color: "white",
-    boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.2)",
-    transition: "box-shadow 0.3s ease, background-color 0.3s ease",
+    color: "black",
+   
   },
   left2: {
     backgroundColor: "#d9dbde",
@@ -28,9 +26,8 @@ export const styles = {
     justifyContent: "center",
     alignItems: "center",
     gap: "10px",
-    color: "white",
-    boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.2)",
-    transition: "box-shadow 0.3s ease, background-color 0.3s ease",
+    color: "black",
+
   },
   
   right: {
@@ -82,8 +79,8 @@ export const styles = {
     left: "48%",
     transform: "translate(-50%, -50%)",
     zIndex: 30,
-    width: "60%",
-    height: "45%",
+    width: "50%",
+    height: "30%",
     filter: "drop-shadow(15px 70px 40px rgba(0, 0, 0, 4))",
   },
   letter: {
@@ -91,7 +88,7 @@ export const styles = {
     fontWeight: "900",
     textAlign: "center",
     zIndex: 15,
-    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)",
+    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.9)",
     transition: "all 0.3s ease",
   },
   letter2: {
@@ -99,7 +96,7 @@ export const styles = {
     fontWeight: "900",
     textAlign: "center",
     zIndex: 15,
-    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.5)",
+    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
     transition: "all 0.3s ease",
   },
   
@@ -115,7 +112,7 @@ export const styles = {
     zIndex: "10",
     width: "250px",
     background: "black",
-    height: "2px",
+    height: "1px",
     border: "none",
   },
   bottomLeftLine: {
@@ -125,7 +122,7 @@ export const styles = {
     zIndex: "10",
     width: "250px",
     background: "black",
-    height: "2px",
+    height: "1px",
     border: "none",
   },
   topRightLine: {
@@ -135,7 +132,7 @@ export const styles = {
     zIndex: "10",
     width: "250px",
     background: "white",
-    height: "2px",
+    height: "1px",
     border: "none",
   },
   bottomRightLine: {
@@ -145,7 +142,7 @@ export const styles = {
     zIndex: "10",
     width: "250px",
     background: "white",
-    height: "2px",
+    height: "1px",
     border: "none",
   },
   exploreButton: {
@@ -159,6 +156,7 @@ export const styles = {
     width: "180px",
     border: "none",
     borderRadius: "12px",
+    filter: "drop-shadow(10px 10px 30px black)"
   },
   leftTop: {
     position: "absolute",
