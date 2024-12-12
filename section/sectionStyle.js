@@ -82,8 +82,8 @@ export const styles = {
     left: "48%",
     transform: "translate(-50%, -50%)",
     zIndex: 30,
-    width: "50%",
-    height: "43%",
+    width: "60%",
+    height: "45%",
     filter: "drop-shadow(15px 70px 40px rgba(0, 0, 0, 4))",
   },
   letter: {
