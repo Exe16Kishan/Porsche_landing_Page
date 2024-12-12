@@ -100,6 +100,8 @@ export function createSection() {
     tags.forEach((tag) => (tag.style.display = isSmallScreen ? "none" : "block"));
     css(S, isSmallScreen ? styles.s2 : styles.s);
     css(watchImage, isSmallScreen ? styles.watch2 : styles.watch);
+    css(left, isSmallScreen ? styles.left2 : styles.left);
+    css(right, isSmallScreen ? styles.right2 : styles.right);
   };
 
   const debouncedResize = (() => {
