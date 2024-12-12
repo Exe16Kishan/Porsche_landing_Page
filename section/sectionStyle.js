@@ -83,7 +83,7 @@ export const styles = {
     transform: "translate(-50%, -50%)",
     zIndex: 30,
     width: "50%",
-    height: "50%",
+    height: "43%",
     filter: "drop-shadow(15px 70px 40px rgba(0, 0, 0, 4))",
   },
   letter: {
