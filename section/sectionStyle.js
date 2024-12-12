@@ -95,7 +95,6 @@ export const styles = {
     transition: "all 0.3s ease",
   },
   letter2: {
-    
     fontSize: "32px", 
     fontWeight: "900",
     textAlign: "center",

@@ -16,14 +16,14 @@ export function createSection() {
 
   const S = document.createElement("img");
   S.setAttribute("src", "./image/S.png");
-  css(S, styles.s);
+  // css(S, styles.s);
   fragment.appendChild(S);
 
-  const image = document.createElement("img");
-  image.setAttribute("src", "./image/watch.png");
-  image.loading = "lazy"; 
-  css(image, styles.watch);
-  fragment.appendChild(image);
+  const watchImage = document.createElement("img");
+  watchImage.setAttribute("src", "./image/watch.png");
+  watchImage.loading = "lazy"; 
+  css(watchImage, styles.watch);
+  fragment.appendChild(watchImage);
 
   const button = document.createElement("button");
   button.textContent = "Explore More";
@@ -40,6 +40,7 @@ export function createSection() {
     const fragment = document.createDocumentFragment();
     letters.forEach((letter) => {
       const letterElement = document.createElement("h1");
+      letterElement.setAttribute("name","letter")
       letterElement.textContent = letter;
       css(letterElement, styles.letter);
       fragment.appendChild(letterElement);
@@ -61,10 +62,11 @@ export function createSection() {
     parent.appendChild(bottomLine);
   };
 
-  const addText = (parent, textArray) => {
+  const addTag = (parent, textArray) => {
     const fragment = document.createDocumentFragment();
     textArray.forEach((text, index) => {
       const h1 = document.createElement("h1");
+      h1.setAttribute("name","tags")
       h1.textContent = text;
       // css(h1, index === 0 ? styles.leftTop : styles.leftBottom);
       if (parent === left) {
@@ -91,9 +93,13 @@ export function createSection() {
     const letters = document.querySelectorAll('[name="letter"]');
     const tags = document.querySelectorAll('[name="tags"]');
 
+
+    // css
     lines.forEach((line) => (line.style.display = isSmallScreen ? "none" : "block"));
     letters.forEach((letter) => css(letter, isSmallScreen ? styles.letter2 : styles.letter));
     tags.forEach((tag) => (tag.style.display = isSmallScreen ? "none" : "block"));
+    css(S, isSmallScreen ? styles.s2 : styles.s);
+    css(watchImage, isSmallScreen ? styles.watch2 : styles.watch);
   };
 
   const debouncedResize = (() => {
@@ -112,8 +118,8 @@ export function createSection() {
   const leftText = ["Diesel", "Tough"];
   const rightText = ["Watches", "Modern"];
 
-  addText(left, leftText);
-  addText(right, rightText);
+  addTag(left, leftText);
+  addTag(right, rightText);
   createLine(left);
   createLine(right);
   addLetters(left, leftLetters);
