@@ -76,6 +76,7 @@ export const styles = {
   bottomButton2:{
     position:"absolute",
     bottom:"0px",
+    backgroundColor:"#d9dbde",
     left: "50%",
     transform: "translate(-50%, -50%)",
     display:"flex",

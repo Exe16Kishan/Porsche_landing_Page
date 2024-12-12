@@ -96,7 +96,7 @@ export const styles = {
   },
   letter2: {
     
-    fontSize: "40px", // Optionally reduce the font size
+    fontSize: "40px", 
     fontWeight: "900",
     textAlign: "center",
     zIndex: 15,

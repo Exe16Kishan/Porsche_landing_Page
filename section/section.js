@@ -136,15 +136,16 @@ export function createSection() {
 
   // Function to apply media query styles
   function applyMediaQueryStyles(e) {
-    // Apply styles based on media query match
-    const lines = document.getElementsByTagName("hr")
-    const letters = document.querySelectorAll('[name="letter"]')
-    const tags = document.querySelectorAll('[name="tags"]')
-    console.log(letters)
+    
+    const lines = document.getElementsByTagName("hr") // select all lines
+    const letters = document.querySelectorAll('[name="letter"]') // select all letters
+    const tags = document.querySelectorAll('[name="tags"]') // select all tags
+    console.log(lines)
+    console.log(tags)
       if (e.matches) {
         //lines
         for (const line of lines) {
-          line.style.display = "none";
+          line.style.display = "none"; // hide when triggered screen
         }
         // letters
         for (const letter of letters) {
@@ -152,8 +153,10 @@ export function createSection() {
         }
         // tags
         for (const tag of tags) {
-          tag.style.display="none"
+          tag.style.display="none"   // hide when triggered screen
         }
+
+        
         css(image,styles.watch2)
         css(left,styles.left2)
         css(right,styles.right2)
