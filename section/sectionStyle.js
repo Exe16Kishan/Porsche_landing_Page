@@ -82,7 +82,7 @@ export const styles = {
     left: "48%",
     transform: "translate(-50%, -50%)",
     zIndex: 30,
-    width: "45%",
+    width: "50%",
     height: "50%",
     filter: "drop-shadow(15px 70px 40px rgba(0, 0, 0, 4))",
   },
@@ -96,7 +96,7 @@ export const styles = {
   },
   letter2: {
     
-    fontSize: "40px", 
+    fontSize: "32px", 
     fontWeight: "900",
     textAlign: "center",
     zIndex: 15,
@@ -152,8 +152,8 @@ export const styles = {
   exploreButton: {
     position: "absolute",
     top: "83%",
-    left: "51.7%",
-    transform: "translate(-60%, -50%)",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     zIndex: "10",
     background: "white",
     height: "40px",

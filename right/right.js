@@ -24,12 +24,9 @@ export function rightComponent() {
   mainContainer.appendChild(printButton);
   mainContainer.appendChild(nav);
 
-  // create a media query
-  const mediaQuery = window.matchMedia("(max-width: 768px)");
-
-  // function to apply media query styles
-  function applyMediaQueryStyles(e) {
-    if (e.matches) {
+  // Responsive design using window.innerWidth
+  function applyResponsiveStyles() {
+    if (window.innerWidth <= 768) {
       css(nav, styles.nav2);
       css(printButton, styles.printButton2);
     } else {
@@ -38,11 +35,9 @@ export function rightComponent() {
     }
   }
 
-  // Add event listener to handle media query change
-  mediaQuery.addEventListener("change", applyMediaQueryStyles);
-
-  // call the function
-  applyMediaQueryStyles(mediaQuery);
+  
+  window.addEventListener("resize", applyResponsiveStyles);
+  applyResponsiveStyles();
 
   return mainContainer;
 }

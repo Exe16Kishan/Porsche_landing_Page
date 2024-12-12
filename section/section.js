@@ -131,63 +131,67 @@ export function createSection() {
   const rightSide = rightComponent();
   right.appendChild(rightSide);
 
-  // Media query to handle screen size changes
-  const mediaQuery = window.matchMedia("(max-width: 768px)");
+function applyMediaQueryStyles() {
+  const isSmallScreen = window.innerWidth <= 768; 
 
-  // Function to apply media query styles
-  function applyMediaQueryStyles(e) {
-    const lines = document.getElementsByTagName("hr") // select all lines
-    const letters = document.querySelectorAll('[name="letter"]') // select all letters
-    const tags = document.querySelectorAll('[name="tags"]') // select all tags
-    console.log(lines)
-    console.log(tags)
-    if (e.matches) {
-        //lines
-        for (const line of lines) {
-          line.style.display = "none"; // hide when triggered screen
-        }
-        // letters
-        for (const letter of letters) {
-          css(letter,styles.letter2)
-        }
-        // tags
-        for (const tag of tags) {
-          tag.style.display="none"   // hide when triggered screen
-        }
+  const lines = document.getElementsByTagName("hr"); // Select all lines
+  const letters = document.querySelectorAll('[name="letter"]'); // Select all letters
+  const tags = document.querySelectorAll('[name="tags"]'); // Select all tags
 
+  console.log(lines);
+  console.log(tags);
 
-        css(image,styles.watch2)
-        css(left,styles.left2)
-        css(right,styles.right2)
-        // letter s
-        css(S, styles.s2); 
-      } else {
-        // lines
-        for (const line of lines) {
-          line.style.display = "block";
-        }
-        // letters
-        for (const letter of letters) {
-          css(letter,styles.letter)
-
-        }
-        // tags
-        for (const tag of tags) {
-          tag.style.display="block"
-        }
-        // letter s
-        css(left,styles.left)
-        css(right,styles.right)
-        css(image, styles.watch);
-
-        css(S, styles.s);
+  if (isSmallScreen) {
+    // lines
+    for (const line of lines) {
+      line.style.display = "none"; // Hide when screen is small
     }
+
+    // letters
+    for (const letter of letters) {
+      css(letter, styles.letter2);
+    }
+
+    // tags
+    for (const tag of tags) {
+      tag.style.display = "none"; // Hide when screen is small
+    }
+
+    css(image, styles.watch2);
+    css(left, styles.left2);
+    css(right, styles.right2);
+    // letter S
+    css(S, styles.s2);
+  } else {
+    // lines
+    for (const line of lines) {
+      line.style.display = "block";
+    }
+
+    // letters
+    for (const letter of letters) {
+      css(letter, styles.letter);
+    }
+
+    // tags
+    for (const tag of tags) {
+      tag.style.display = "block";
+    }
+
+    css(left, styles.left);
+    css(right, styles.right);
+    css(image, styles.watch);
+    // letter S
+    css(S, styles.s);
   }
+}
 
-  // Add event listener to handle media change
-  mediaQuery.addEventListener("change", applyMediaQueryStyles);
+// Event listener for window resize
+window.addEventListener("resize", applyMediaQueryStyles);
 
-  applyMediaQueryStyles(mediaQuery);
+// Initial call to apply styles based on the current screen size
+applyMediaQueryStyles();
+
 
   return section;
 }
