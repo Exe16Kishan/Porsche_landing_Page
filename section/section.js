@@ -166,8 +166,8 @@ export function createSection() {
     }
   }
 
-  applyMediaQueryStyles();
   window.addEventListener("resize", applyMediaQueryStyles);
+  applyMediaQueryStyles();
 
 
   return section;
