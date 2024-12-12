@@ -6,8 +6,6 @@ export function rightComponent() {
   const navList = ["Cart", "Login", "Profile"];
   const nav = document.createElement("div"); // Parent div for navigation
   const Link = document.createElement("div"); // Child div for links
-
-  css(nav, styles.nav);
   css(Link, styles.Link);
 
   // Add links to the Link div
@@ -26,30 +24,24 @@ export function rightComponent() {
   mainContainer.appendChild(printButton);
   mainContainer.appendChild(nav);
 
-  css(printButton, styles.printButton);
-
   // create a media query
   const mediaQuery = window.matchMedia("(max-width: 768px)");
 
   // function to apply media query styles
   function applyMediaQueryStyles(e) {
     if (e.matches) {
-      styles.printButton.display = "none";  // hide the button
-      styles.nav.display = "none";          // hide the nav
+      css(nav, styles.nav2);
+      css(printButton, styles.printButton2);
     } else {
-      styles.printButton.display = "flex";  // show the print button
-      styles.nav.display = "";              // reset 
+      css(nav, styles.nav);
+      css(printButton, styles.printButton);
     }
-
-    // re-apply updated styles in element
-    css(nav, styles.nav);
-    css(printButton, styles.printButton);
   }
 
   // Add event listener to handle media query change
   mediaQuery.addEventListener("change", applyMediaQueryStyles);
 
-  // call the function 
+  // call the function
   applyMediaQueryStyles(mediaQuery);
 
   return mainContainer;

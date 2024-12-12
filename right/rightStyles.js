@@ -5,7 +5,9 @@ export const styles = {
       right: "15%",       
       padding: "20px",
       display:""
-
+  },
+  nav2:{
+    display:"none"
   },
   link: {
       margin: "5px 0",
@@ -31,5 +33,8 @@ export const styles = {
     display: "flex", 
     justifyContent: "center", 
     alignItems: "center"
+  },
+  printButton2:{
+    display: "none",
   }
 };
